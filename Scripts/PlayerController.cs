@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision collision)
     {
         if (other.CompareTag("Powerup"))
         {
@@ -47,10 +47,10 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(Background.GetComponent<MoveDown>().Powerup());
 else if (other.CompareTag("Pedestrian"))
             {
-                gameManager.GameOver();
                 explosionParticle.Play();
                 playerAudio.PlayOneShot(crashSound, 1.0f);
                 gameOver = true;
+                gameManager.GameOver();
             }
 
         }
