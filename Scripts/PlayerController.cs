@@ -11,12 +11,13 @@ public class PlayerController : MonoBehaviour
     public GameObject player;
     public ParticleSystem explosionParticle;
     private AudioSource playerAudio;
-    private bool hasPowerup;
+    public bool hasPowerup;
+    public bool gameOver = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        playerAudio = GetComponent‹AudioSource > ();
+        playerAudio = GetComponentâ€¹AudioSource > ();
 
     }
 
@@ -49,6 +50,7 @@ else if (other.CompareTag("Pedestrian"))
                 gameManager.GameOver();
                 explosionParticle.Play();
                 playerAudio.PlayOneShot(crashSound, 1.0f);
+                gameOver = true;
             }
 
         }
