@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveDown : MonoBehaviour
+public class RepeatBackground : MonoBehaviour
 {
     public float speed;
     public float normalSpeed = 3;
